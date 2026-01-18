@@ -32,10 +32,27 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: List build output
+        run: ls -la
+      
+      - name: Check for dist folder
+        run: |
+          if [ -d "dist" ]; then
+            echo "dist folder exists"
+            UPLOAD_PATH="./dist"
+          elif [ -d "build" ]; then
+            echo "build folder exists"
+            UPLOAD_PATH="./build"
+          else
+            echo "No build output found, using current directory"
+            UPLOAD_PATH="./"
+          fi
+          echo "UPLOAD_PATH=$UPLOAD_PATH" >> $GITHUB_ENV
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ${{ env.UPLOAD_PATH }}
 
   deploy:
     environment:
