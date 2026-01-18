@@ -1,0 +1,25 @@
+{
+  "name": "sqorz - NBA Scores",
+  "short_name": "sqorz",
+  "description": "NBA scores and standings",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#141415",
+  "theme_color": "#141415",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://ui-avatars.com/api/?name=Sq&background=141415&color=fff&size=192&length=2&rounded=true&bold=true",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://ui-avatars.com/api/?name=Sq&background=141415&color=fff&size=512&length=2&rounded=true&bold=true",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
